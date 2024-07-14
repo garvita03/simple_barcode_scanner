@@ -43,20 +43,20 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const SimpleBarcodeScannerPage(
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            TextField(
-                              decoration: InputDecoration(
-                                labelText: 'Enter Text',
-                                border: OutlineInputBorder(),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                          // child: Column(
+                          //   children: [
+                          //     SizedBox(
+                          //       height: 20,
+                          //     ),
+                          //     TextField(
+                          //       decoration: InputDecoration(
+                          //         labelText: 'Enter Text',
+                          //         border: OutlineInputBorder(),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+                          ),
                     ));
                 setState(() {
                   if (res is String) {

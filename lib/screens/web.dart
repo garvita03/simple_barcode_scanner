@@ -53,23 +53,51 @@ class BarcodeScanner extends StatelessWidget {
     ui.platformViewRegistry
         .registerViewFactory(createdViewId, (int viewId) => iframe);
     final width = MediaQuery.of(context).size.width;
-    final height = width / (16 / 9);
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(appBarTitle ?? kScanPageTitle),
-        centerTitle: centerTitle,
-      ),
-      body: SingleChildScrollView(
+      // appBar: AppBar(
+      //   title: Text(appBarTitle ?? kScanPageTitle),
+      //   centerTitle: centerTitle,
+      //   backgroundColor: Colors.transparent,
+      // ),
+      body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: height,
-              width: width,
+              width: 0.5 * width,
+              height: 0.75 * height,
               child: HtmlElementView(
                 viewType: createdViewId,
               ),
             ),
-            if (child != null) child!,
+            const SizedBox(
+              height: 8,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(27, 19, 97, 1),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 24,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  shadowColor: Colors.transparent,
+                ),
+                child: Text(
+                  "Stop Scan",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                  ),
+                )),
           ],
         ),
       ),
