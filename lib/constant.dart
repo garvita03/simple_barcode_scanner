@@ -5,4 +5,4 @@ class PackageConstant {
       "assets/packages/simple_barcode_scanner/assets/barcode.html";
 }
 
-String kScanPageTitle = 'Scan barcode/qrcode';
+String kScanPageTitle = 'Scan in progress';
